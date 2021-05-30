@@ -1,5 +1,2 @@
-console.log("typescript code");
-
-let tab = ["chien", "chat", "poisson"];
-
-console.log(tab);
+let array = ["chien", "homme"];
+array[1] = "espoion";
