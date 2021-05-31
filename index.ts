@@ -1,44 +1,39 @@
-let num: number = 12;
-let num3: number;
-let numOrString: number | string;
-num3 = 32;
+const ageDuCapitaine = (age: number, size?: number): void => {
+  if (size) {
+    console.log(
+      "la taille du capitaine est de",
+      size,
+      "cm et il est agé de",
+      age
+    );
+  } else {
+    console.log("le capitaine est agé de", age, "ans");
+  }
+};
+ageDuCapitaine(19);
 
-//arrays
+//Enum & Tuple
+enum Role {
+  ADMIN,
+  PREMIUM,
+  BASIC,
+}
+console.log(Role.ADMIN);
 
-let tab = ["homme", "femme", "enfant"];
-let tableau: (number | boolean)[] = [];
-
-tableau.push(false);
-tableau.push(23);
-console.log(tableau);
-
-//objets
-
-interface player {
-  id: number;
+interface user {
   name: string;
-  jersey: number;
+  attributes: [number | boolean, string];
+  role: Role;
 }
 
-let zidane: player = {
-  id: 0,
-  name: "Zidane",
-  jersey: 23,
+const user1: user = {
+  name: "julien",
+  attributes: [false, "author"],
+  role: Role.ADMIN,
 };
 
-//class
+console.log(user1.role);
 
-class singer {
-  id: number;
-  name: string;
-  alive: boolean;
-
-  constructor(id: number, name: string, alive?: boolean) {
-    this.id = id;
-    this.name = name;
-    this.alive = alive;
-  }
+if (user1.role === Role.ADMIN) {
+  console.log("connexion spéciale");
 }
-
-const prince = new singer(0, "prince", false);
-console.log(prince);
